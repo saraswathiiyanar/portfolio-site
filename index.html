@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    nav{
+      width:100%;
+      padding:15px 8%;
+      background:#111827;
+      position:fixed;
+      top:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+    }
+
+    nav h2{
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    section{
+      min-height:100vh;
+      padding:100px 8%;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .hero span{
+      color:#38bdf8;
+    }
+
+    .hero p{
+      width:70%;
+      margin-top:15px;
+      line-height:1.8;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:12px 25px;
+      background:#38bdf8;
+      color:black;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:40px;
+      color:#38bdf8;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+
+    .skill-box{
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.4s;
+    }
+
+    .skill-box:hover{
+      transform:translateY(-10px);
+      background:#38bdf8;
+      color:black;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:scale(1.04);
+    }
+
+    /* CERTIFICATION */
+    .certifications{
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      padding-bottom:20px;
+    }
+
+    .cert-card{
+      min-width:280px;
+      background:#1e293b;
+      padding:20px;
+      border-radius:15px;
+      transition:0.3s;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .cert-card:hover{
+      transform:translateY(-8px);
+      background:#38bdf8;
+      color:black;
+    }
+
+    .cert-card img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:15px;
+    }
+
+    /* POPUP */
+    .popup{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100vh;
+      background:rgba(0,0,0,0.8);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:2000;
+    }
+
+    .popup img{
+      width:70%;
+      max-width:700px;
+      border-radius:15px;
+      border:4px solid white;
+    }
+
+    .popup span{
+      position:absolute;
+      top:20px;
+      right:40px;
+      font-size:40px;
+      cursor:pointer;
+      color:white;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:15px 0;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        width:100%;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:10px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .popup img{
+        width:90%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2>Portfolio</h2>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+
+    <h1><span>Saraswathi I</span></h1>
+
+    <h2>Frontend Developer | Web Developer | Web Designer</h2>
+
+    <p>
+      Passionate frontend developer skilled in HTML, CSS, JavaScript
+      and responsive web design. I love creating modern websites
+      with animations and interactive UI.
+    </p>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <h1 class="title">About Me</h1>
+
+    <p style="line-height:2; text-align:center;">
+      I am a web developer passionate about building responsive and
+      attractive websites. I enjoy learning new technologies and
+      improving my frontend development skills.I am a passionate and self-motivated student with strong interest in Web Development, Front-End Design, and emerging technologies. I enjoy creating responsive and user-friendly websites using HTML, CSS, JavaScript, and modern design techniques. I am always eager to learn new skills and improve my knowledge through projects, certifications, and online courses.
+
+I have completed certifications in areas like Front-End Development, AI, Cloud Computing, and Programming Fundamentals. I like solving problems, exploring creative ideas, and building projects that improve my technical and practical skills.
+
+I am a quick learner, a good team player, and capable of adapting to new environments easily. My goal is to build a successful career in the IT industry and contribute to innovative and impactful projects. I am continuously working on improving my technical skills, communication abilities, and professional experience to become a skilled software professional.
+    </p>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <h1 class="title">Skills</h1>
+
+    <div class="skills">
+
+      <div class="skill-box">HTML</div>
+
+      <div class="skill-box">CSS</div>
+
+      <div class="skill-box">JavaScript</div>
+
+      <div class="skill-box">UI Design</div>
+
+      <div class="skill-box">C Programming</div>
+
+      <div class="skill-box">AWS Cloud basics</div>
+
+      <div class="skill-box">IOT basics</div>
+
+      <div class="skill-box">Frontend and Web Development</div>
+
+      <div class="skill-box">vscode</div>
+
+      <div class="skill-box">GitHub</div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+
+    <h1 class="title">Projects</h1>
+
+    <div class="projects">
+
+      <div class="project-card">
+        <h2>Portfolio Website</h2>
+        <br>
+        <p>
+         Designed and developed a responsive personal portfolio website to showcase my skills, certifications, projects, achievements, and contact information in a professional way. The website was created using HTML, CSS, and JavaScript with a clean and modern user interface. Added smooth scrolling, hover effects, animations, and interactive sections to improve user experience and website appearance.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h2>Intelligent Expense Tracker with Financial Advisory System</h2>
+        <br>
+        <p>
+          Developed an intelligent expense tracking application that allows users to record income and expenses, visualize spending behavior, and receive basic financial insights. The system helps users manage budgets effectively through simple analytics and recommendations.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h2>Online Complaint Management System</h2>
+        <br>
+        <p>
+          Developed a full-stack web application for submitting and tracking user complaints with an admin dashboard to manage complaint status such as Pending, In Progress, and Resolved.
+        </p>
+      </div>
+      
+      <div class="project-card">
+        <h2>Todo List Application</h2>
+        <br>
+        <p>
+          A simple and interactive todo list application built using HTML, CSS and JavaScript. It allows users to add, delete, and manage daily tasks efficiently with a clean UI.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h2>Challan Clear for Traffic Web Application</h2>
+        <br>
+        <p>
+          Developed a web application for checking and managing traffic challans with a user-friendly interface for quick fine verification and payment assistance.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE & CERTIFICATIONS -->
+  <section id="certifications">
+
+    <h1 class="title">Experience & Certifications</h1>
+
+    <div class="certifications">
+
+      <!-- CERT 1 -->
+      <div class="cert-card" onclick="openPopup('Retech Internship Certificate.png')">
+
+        <img src="Retech Internship Certificate.png">
+
+        <h3>Retech Internship Certificate</h3>
+
+      </div>
+
+      <!-- CERT 2 -->
+      <div class="cert-card" onclick="openPopup('iot - NPTEL.png')">
+
+        <img src="iot - NPTEL.png">
+
+        <h3>NPTEL Certificate</h3>
+    
+    <p>
+        The Internet of Things (IoT) is a technology that connects smart devices to the internet for collecting, sharing, and exchanging data. IoT helps devices communicate automatically and improves efficiency, automation, and real-time monitoring in areas like smart homes, healthcare, industries, and transportation.
+    </p>
+
+      </div>
+
+      <!-- CERT 3 -->
+      <div class="cert-card" onclick="openPopup('Python for Data Science - NPTEL.png')">
+
+        <img src="Python for Data Science - NPTEL.png">
+
+        <h3>NPTEL Certificate</h3>
+
+    <p>
+        Python for Data Science focuses on analyzing, processing, and visualizing data using Python programming. It is widely used for data analysis, machine learning, automation, and creating data-driven solutions with libraries like NumPy, Pandas, and Matplotlib.
+    </p>
+
+      </div>
+
+      <!-- CERT 4 -->
+      <div class="cert-card" onclick="openPopup('Introduction to ML Concepts')">
+
+        <img src="Introduction to ML Concepts.png">
+
+        <h3>Microsoft Certificate</h3>
+
+    <p>
+        Completed Microsoft certification on Introduction to Machine Learning Concepts, which provides foundational knowledge of machine learning techniques, data analysis, model training, and AI-based solutions. Learned basic concepts of supervised and unsupervised learning, data processing, and predictive analytics using modern technologies.
+    </p>
+
+      </div>
+
+      <!-- CERT 5 -->
+      <div class="cert-card" onclick="openPopup('Introduction to gen AI and agent.png')">
+
+        <img src="Introduction to gen AI and agent.png">
+
+        <h3>Microsoft Certificate</h3>
+
+         <p>
+        Completed Microsoft certification on Introduction to Generative AI and Agents, which covers the fundamentals of Generative AI, intelligent agents, and AI-powered applications. Learned about prompt engineering, AI models, automation, and how intelligent agents interact to solve real-world problems efficiently.
+    </p>
+
+      </div>
+
+      <!-- CERT 6 -->
+      <div class="cert-card" onclick="openPopup('Robotics Certificate.png')">
+
+        <img src="Robotics Certificate.png">
+
+        <h3>Robotics Certificate</h3>
+
+    <p>
+        Completed Robotics certification focused on the fundamentals of robotics, automation, and intelligent systems. Learned about robotic components, sensors, microcontrollers, and basic programming concepts used in designing and controlling robotic systems for real-world applications.
+    </p>
+
+      </div>
+ 
+    </div>
+
+  </section>
+
+  <!-- Resume Section -->
+<section id="resume" class="resume-section">
+    <h2>My Resume</h2>
+    <p>Click below to view or download my resume.</p>
+
+    <div class="resume-buttons">
+        <!-- View Resume -->
+        <a href="Saraswathi I (11142301IT11043).pdf" target="_blank" class="btn">
+            View Resume
+        </a>
+
+        <!-- Download Resume -->
+        <a href="Saraswathi I (11142301IT11043).pdf" download class="btn">
+            Download Resume
+        </a>
+    </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h1 class="title">Contact</h1>
+
+    <div class="contact">
+
+      <p>Email : saraswathiiyanar2005@gmail.com</p>
+
+      <p>Phone : +91 9659036677</p>
+
+      <p>LinkedIn : https://www.linkedin.com/in/saraswathi-i-956843359/</p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>© 2026 Saraswathi Portfolio</p>
+
+  </footer>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+
+    <span onclick="closePopup()">×</span>
+
+    <img id="popup-img">
+
+  </div>
+
+  <script>
+
+    function openPopup(image){
+      document.getElementById("popup").style.display="flex";
+      document.getElementById("popup-img").src=image;
+    }
+
+    function closePopup(){
+      document.getElementById("popup").style.display="none";
+    }
+
+  </script>
+
+</body>
+</html>
